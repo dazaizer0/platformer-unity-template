@@ -4,8 +4,93 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+
+    [Header("SerializeFields")]
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask ground;
+
+    // horizontal
+    private float horizontal;
+
+    [Header("Stats")]
+    private float speed = 8f;
+
+    // jump
+    private float jumpPower = 24f;
+
+    public float jumpStartTime;
+    private float jumpTime;
+    private bool isJump;
+    private bool grounded;
+
+    // flip
+    private bool right = true;
+
+    void Update()
+    {
+
+        horizontal = Input.GetAxisRaw("Horizontal");
+        playerFlip();
+
+        Jump();
+    }
+
+    void FixedUpdate()
+    {
+
+        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+    }
+
+    private void playerFlip()
+    {
+
+        if (right && horizontal < 0f || !right && horizontal > 0f)
+        {
+
+            right = !right;
+
+            Vector3 scal = transform.localScale;
+            scal.x *= -1;
+            transform.localScale = scal;
+        }
+    }
+
+    void Jump()
+    {
+
+        grounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, ground);
+
+        if (grounded && (Input.GetButtonDown("Jump")))
+        {
+
+            isJump = true;
+            jumpTime = jumpStartTime;
+            rb.velocity = Vector2.up * jumpPower;
+        }
+
+        if (Input.GetButtonDown("Jump") && isJump == true)
+        {
+
+            rb.velocity = Vector2.up * jumpPower;
+            jumpTime -= Time.deltaTime;
+        }else
+        {
+
+            isJump = false;
+        }
+
+
+        if(Input.GetButtonUp("Jump"))
+        {
+
+            isJump = false;
+        }
+    }
+}
+
     // PUBLIC
-    [Header("Move")]
+/*  [Header("Move")]
     public float speed;
 
     [Header("Jump")]
@@ -82,3 +167,4 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = Scaler;
     }
 }
+*/
