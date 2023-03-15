@@ -224,7 +224,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.12941177, g: 0.14509805, b: 0.15686275, a: 1}
+  m_Color: {r: 0.4, g: 0.20784314, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -335,7 +335,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.12941177, g: 0.14509805, b: 0.15686275, a: 1}
+  m_Color: {r: 0.4, g: 0.20784314, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -428,7 +428,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.4117647, g: 0.3882353, b: 0.3254902, a: 0}
+  m_BackGroundColor: {r: 0.05490196, g: 0.05490196, b: 0.05490196, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -445,7 +445,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.788293
+  orthographic size: 6.968516
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -469,7 +469,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.25, y: -1.06, z: -10}
+  m_LocalPosition: {x: -0.25, y: 3.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -577,7 +577,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.12941177, g: 0.14509805, b: 0.15686275, a: 1}
+  m_Color: {r: 0.4, g: 0.20784314, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -688,7 +688,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.12941177, g: 0.14509805, b: 0.15686275, a: 1}
+  m_Color: {r: 0.4, g: 0.20784314, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -758,7 +758,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.12941177, g: 0.14509805, b: 0.15686275, a: 1}
+  m_Color: {r: 0.4, g: 0.20784314, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -915,7 +915,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.12941177, g: 0.14509805, b: 0.15686275, a: 1}
+  m_Color: {r: 0.4, g: 0.20784314, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1033,7 +1033,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.34901962, g: 0.36078432, b: 0.33333334, a: 1}
+  m_Color: {r: 0.4, g: 0.20784314, b: 0.3372549, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1067,7 +1067,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3593070653763383649, guid: 0fbb647b980ce664f833514221762cb8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.502
+      value: -0.63
       objectReference: {fileID: 0}
     - target: {fileID: 3593070653812225850, guid: 0fbb647b980ce664f833514221762cb8, type: 3}
       propertyPath: m_RootOrder
@@ -1139,11 +1139,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3593070655675493859, guid: 0fbb647b980ce664f833514221762cb8, type: 3}
       propertyPath: m_Size.y
-      value: 0.989
+      value: 1.1285607
       objectReference: {fileID: 0}
     - target: {fileID: 3593070655675493859, guid: 0fbb647b980ce664f833514221762cb8, type: 3}
       propertyPath: m_Offset.y
-      value: 0.0107745975
+      value: -0.059005678
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593070655687998696, guid: 0fbb647b980ce664f833514221762cb8, type: 3}
+      propertyPath: m_Size.x
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 3593070655687998696, guid: 0fbb647b980ce664f833514221762cb8, type: 3}
+      propertyPath: m_Size.y
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 3593070655687998696, guid: 0fbb647b980ce664f833514221762cb8, type: 3}
       propertyPath: m_Sprite
