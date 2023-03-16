@@ -3,20 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class ActualTime : MonoBehaviour
+public class SpawnObjectAtHour : MonoBehaviour
 {
-    public string time = "";
+
     public string spawnHour = "";
     public GameObject testObject;
 
 
     void Update()
     {
-    
-        time = DateTime.Now.ToString();
-        string hour = time[11].ToString() + time[12].ToString();
         
-        if(hour == spawnHour)
+        if(TimeManager.hour == spawnHour)
         {
 
             testObject.SetActive(true);
