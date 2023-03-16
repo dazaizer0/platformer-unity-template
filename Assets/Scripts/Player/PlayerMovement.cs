@@ -30,7 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private bool dashing;
 
     private float dashingPower = 50f;
-    private float dashTime = 0.3f;
+    private float dashTime = 0.2f;
     private float dashCooldown = 0.8f;
 
     // flip
@@ -110,14 +110,17 @@ public class PlayerMovement : MonoBehaviour
 
         float gravity = rb.gravityScale;
         rb.gravityScale = 0f;
+        speed = 15f;
 
         rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
 
         trail.emitting = true;
 
         yield return new WaitForSeconds(dashTime);
+
         trail.emitting = false;
         rb.gravityScale = 2.8f;
+        speed = 9f;
         dashing = false;
 
         yield return new WaitForSeconds(dashCooldown);
