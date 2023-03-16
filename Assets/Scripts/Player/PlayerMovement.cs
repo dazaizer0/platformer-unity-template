@@ -8,8 +8,13 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("SerializeFields")]
     [SerializeField] private Rigidbody2D rb;
+
     [SerializeField] private Transform groundCheck;
+    [SerializeField] private Transform wallCheck;
+
     [SerializeField] private LayerMask ground;
+    [SerializeField] private LayerMask wall;
+
     [SerializeField] private TrailRenderer trail;
 
     // horizontal
@@ -31,7 +36,19 @@ public class PlayerMovement : MonoBehaviour
 
     private float dashingPower = 50f;
     private float dashTime = 0.2f;
-    private float dashCooldown = 0.8f;
+    private float dashCooldown = 0.9f;
+
+    // wall movement
+    private bool wallSlide;
+    private float wallSlideSpeed = 0.3f;
+
+    private bool wallJump;
+    private float wallJumpDirection;
+    private float wallJumpTime = 0.2f;
+    private float wallJumpCounter;
+    private float wallJumpDuration = 0.4f;
+    private Vector2 wallJumpingPower = new Vector2(10f, 18f);
+
 
     // flip
     private bool right = true;
@@ -43,6 +60,15 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         
         playerFlip();
+
+        WallSlide();
+
+        // WallJump(); without input system
+
+        if (!wallJump)
+        {
+            playerFlip();
+        }
     }
 
     void FixedUpdate()
@@ -71,6 +97,12 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.1f, ground);
     }
 
+    private bool walled()
+    {
+
+        return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wall);
+    }
+
     public void Jump(InputAction.CallbackContext context)
     {
 
@@ -85,6 +117,64 @@ public class PlayerMovement : MonoBehaviour
 
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
         }
+    }
+
+    private void WallSlide()
+    {
+        
+        if (walled() && !grounded() && horizontal != 0f)
+        {
+
+            wallSlide = true;
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, -wallSlideSpeed, float.MaxValue));
+        }else
+        {
+
+            wallSlide = false;
+        }
+    }
+
+    public void WallJump(InputAction.CallbackContext context)
+    {
+
+        if (wallSlide)
+        {
+
+            wallJump = false;
+            wallJumpDirection = -transform.localScale.x;
+            wallJumpCounter = wallJumpTime;
+
+            CancelInvoke(nameof(StopWallJumping));
+        }else
+        {
+
+            wallJumpCounter -= Time.deltaTime;
+        }
+
+        if (context.performed && wallJumpCounter > 0f)
+        {
+
+            wallJump = true;
+            rb.velocity = new Vector2(wallJumpDirection * wallJumpingPower.x, wallJumpingPower.y);
+            wallJumpCounter = 0f;
+
+            if (transform.localScale.x != wallJumpDirection)
+            {
+
+                right = !right;
+                Vector3 localScale = transform.localScale;
+                localScale.x *= -1f;
+                transform.localScale = localScale;
+            }
+
+            Invoke(nameof(StopWallJumping), wallJumpDuration);
+        }
+    }
+
+    private void StopWallJumping()
+    {
+
+        wallJump = false;
     }
 
     public void Move(InputAction.CallbackContext context)
