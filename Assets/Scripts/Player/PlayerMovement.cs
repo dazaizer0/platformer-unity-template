@@ -19,11 +19,11 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 9f;
 
     // jump
-    private float jumpPower = 25f;
+    private bool isJump;
 
+    private float jumpPower = 25f;
     public float jumpStartTime;
     private float jumpTime;
-    private bool isJump;
 
     // dash
     private bool canDash = true;
@@ -95,8 +95,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context)
     {
+        if (!grounded())
+        {
 
-        StartCoroutine(Dash());
+            StartCoroutine(Dash());
+        }
     }
 
     private IEnumerator Dash()
