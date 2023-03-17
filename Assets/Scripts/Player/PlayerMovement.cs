@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float dashingPower = 50f;
     private float dashTime = 0.2f;
-    private float dashCooldown = 0.9f;
+    private float dashCooldown = 2f;
 
     // wall movement
     private bool wallSlide;
@@ -67,6 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (!wallJump)
         {
+
             playerFlip();
         }
     }
@@ -195,10 +196,11 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator Dash()
     {
 
+        // bools
         canDash = false;
         dashing = true;
 
-        float gravity = rb.gravityScale;
+        // dash
         rb.gravityScale = 0f;
         speed = 15f;
 

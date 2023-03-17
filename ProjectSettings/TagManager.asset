@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - PuzzleUnlockObject
+  - op
   layers:
   - Default
   - TransparentFX
