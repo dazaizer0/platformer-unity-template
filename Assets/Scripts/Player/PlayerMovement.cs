@@ -38,6 +38,12 @@ public class PlayerMovement : MonoBehaviour
     private float dashTime = 0.2f;
     private float dashCooldown = 2f;
 
+    // dash up
+    private int toDashUp = 1;
+    private float dashUpPower = 800;
+    private bool dashingUp = false;
+    private bool canDashUp = false;
+
     // wall movement
     private bool wallSlide;
     private float wallSlideSpeed = 0.3f;
@@ -65,11 +71,10 @@ public class PlayerMovement : MonoBehaviour
 
         // WallJump(); without input system
 
-        if (!wallJump)
-        {
-
-            playerFlip();
-        }
+        if (!wallJump) {playerFlip();}
+        if(grounded()) {toDashUp = 1; dashingUp = false; canDashUp = false;}
+        if(toDashUp == 0) {canDashUp = true;}
+        // if(toDash < 0) {toDash = 0;}
     }
 
     void FixedUpdate()
@@ -107,17 +112,37 @@ public class PlayerMovement : MonoBehaviour
     public void Jump(InputAction.CallbackContext context)
     {
 
-        if (context.performed && grounded())
+        if(!dashingUp)
+        {
+
+            toDashUp -= 1;
+
+            if (context.performed && grounded())
+            {
+
+                rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            }
+
+            if (context.canceled && rb.velocity.y > 0f)
+            {
+
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            }
+        }
+
+        /*if (context.performed && grounded())
         {
 
             rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+            toDash -= 1;
         }
 
         if (context.canceled && rb.velocity.y > 0f)
         {
 
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-        }
+           rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+            toDash -= 1;
+        }*/
     }
 
     private void WallSlide()
@@ -190,6 +215,17 @@ public class PlayerMovement : MonoBehaviour
         {
 
             StartCoroutine(Dash());
+        }
+    }
+
+    public void DashUp(InputAction.CallbackContext context)
+    {
+
+        if(context.performed && !dashingUp && !grounded() && canDashUp)
+        {
+
+            rb.AddForce(transform.up * dashUpPower * 100);
+            dashingUp = true;
         }
     }
 

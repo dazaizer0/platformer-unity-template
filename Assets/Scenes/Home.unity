@@ -2517,6 +2517,9 @@ MonoBehaviour:
     m_Bits: 64
   trail: {fileID: 2078647337}
   jumpStartTime: 0.25
+  toDash: 1
+  dashUpPower: 1000
+  dashingUp: 0
 --- !u!114 &2078647336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2654,6 +2657,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 2c882cfb-d6c3-4afe-8057-e7526213786e
     m_ActionName: Player/WallJump[/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2078647335}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: DashUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 297c1d50-2308-47d3-9246-4c50b06eee3d
+    m_ActionName: Player/DashUp[/Keyboard/upArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
