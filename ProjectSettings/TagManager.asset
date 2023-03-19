@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PuzzleUnlockObject
   - op
+  - ToDestroyBlock
   layers:
   - Default
   - TransparentFX

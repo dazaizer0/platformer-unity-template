@@ -30,7 +30,11 @@ public class PlayerMovement : MonoBehaviour
     public float jumpStartTime;
     private float jumpTime;
 
+    [Header("Dash")]
     // dash
+
+    public bool Dashing;
+
     private bool canDash = true;
     private bool dashing;
 
@@ -62,7 +66,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        //horizontal = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         
         playerFlip();
@@ -72,9 +75,13 @@ public class PlayerMovement : MonoBehaviour
         // WallJump(); without input system
 
         if (!wallJump) {playerFlip();}
+
         if(grounded()) {toDashUp = 1; dashingUp = false; canDashUp = false;}
+
         if(toDashUp == 0) {canDashUp = true;}
-        // if(toDash < 0) {toDash = 0;}
+
+        if(dashing || dashingUp){Dashing = true;}
+        else{Dashing = false;}
     }
 
     void FixedUpdate()
@@ -109,6 +116,7 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wall);
     }
 
+
     public void Jump(InputAction.CallbackContext context)
     {
 
@@ -129,20 +137,6 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
             }
         }
-
-        /*if (context.performed && grounded())
-        {
-
-            rb.velocity = new Vector2(rb.velocity.x, jumpPower);
-            toDash -= 1;
-        }
-
-        if (context.canceled && rb.velocity.y > 0f)
-        {
-
-           rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-            toDash -= 1;
-        }*/
     }
 
     private void WallSlide()
@@ -254,5 +248,15 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(dashCooldown);
 
         canDash = true;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+
+        if (other.tag == "ToDestroyBlock" && Dashing)
+        {
+
+            Destroy(other.gameObject);
+        }
     }
 }
