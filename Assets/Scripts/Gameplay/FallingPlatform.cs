@@ -10,6 +10,7 @@ public class FallingPlatform : MonoBehaviour
 
     void Start()
     {
+
         rb = GetComponent<Rigidbody2D>();
         // rb.bodyType = RigidbodyType2D.Kinematic;
     }
@@ -22,6 +23,7 @@ public class FallingPlatform : MonoBehaviour
 
             //rb.bodyType = RigidbodyType2D.Dynamic;
             //rb.gravityScale = 1.1f;
+            
             Destroy(gameObject, 0.5f);
         }
     }
@@ -34,6 +36,7 @@ public class FallingPlatform : MonoBehaviour
 
             rb.bodyType = RigidbodyType2D.Dynamic;
             rb.gravityScale = 1.1f;
+
             Destroy(gameObject, 0.7f);
         }
     }

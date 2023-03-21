@@ -25,7 +25,6 @@ public class MoveingPlatform : MonoBehaviour
 
             destination = rpoint.position;
         }
-
         transform.position = Vector2.MoveTowards(transform.position, destination, speed * Time.deltaTime);
     }
 

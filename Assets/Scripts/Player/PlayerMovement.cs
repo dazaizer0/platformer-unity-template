@@ -8,19 +8,16 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("SerializeFields")]
     [SerializeField] private Rigidbody2D rb;
-
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform wallCheck;
-
     [SerializeField] private LayerMask ground;
     [SerializeField] private LayerMask wall;
-
     [SerializeField] private TrailRenderer trail;
 
     // horizontal
     private float horizontal;
 
-    [Header("Stats")]
+    [Header("Movement")]
     private float speed = 9f;
 
     // jump
@@ -31,10 +28,8 @@ public class PlayerMovement : MonoBehaviour
     private float jumpTime;
 
     [Header("Dash")]
-    // dash
-
+    // dash forward
     public bool Dashing;
-
     private bool canDash = true;
     private bool dashing;
 
@@ -43,22 +38,22 @@ public class PlayerMovement : MonoBehaviour
     private float dashCooldown = 2f;
 
     // dash up
-    private int toDashUp = 1;
-    private float dashUpPower = 800;
     private bool dashingUp = false;
     private bool canDashUp = false;
 
+    private int toDashUp = 1;
+    private float dashUpPower = 800;
+
     // wall movement
     private bool wallSlide;
-    private float wallSlideSpeed = 0.3f;
-
     private bool wallJump;
+
+    private float wallSlideSpeed = 0.3f;
     private float wallJumpDirection;
     private float wallJumpTime = 0.2f;
     private float wallJumpCounter;
     private float wallJumpDuration = 0.4f;
     private Vector2 wallJumpingPower = new Vector2(10f, 18f);
-
 
     // flip
     private bool right = true;
@@ -69,15 +64,10 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         
         playerFlip();
-
         WallSlide();
 
-        // WallJump(); without input system
-
         if (!wallJump) {playerFlip();}
-
         if(grounded()) {toDashUp = 1; dashingUp = false; canDashUp = false;}
-
         if(toDashUp == 0) {canDashUp = true;}
 
         if(dashing || dashingUp){Dashing = true;}
@@ -182,11 +172,10 @@ public class PlayerMovement : MonoBehaviour
             {
 
                 right = !right;
-                Vector3 localScale = transform.localScale;
-                localScale.x *= -1f;
-                transform.localScale = localScale;
+                Vector3 scale = transform.localScale;
+                scale.x *= -1f;
+                transform.localScale = scale;
             }
-
             Invoke(nameof(StopWallJumping), wallJumpDuration);
         }
     }
@@ -235,7 +224,6 @@ public class PlayerMovement : MonoBehaviour
         speed = 15f;
 
         rb.velocity = new Vector2(transform.localScale.x * dashingPower, 0f);
-
         trail.emitting = true;
 
         yield return new WaitForSeconds(dashTime);
@@ -246,7 +234,6 @@ public class PlayerMovement : MonoBehaviour
         dashing = false;
 
         yield return new WaitForSeconds(dashCooldown);
-
         canDash = true;
     }
 
