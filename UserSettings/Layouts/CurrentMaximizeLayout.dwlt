@@ -67,7 +67,7 @@ MonoBehaviour:
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
-  m_Stats: 0
+  m_Stats: 1
   m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_ZoomArea:
     m_HRangeLocked: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
       y: 21
       width: 1495.3333
       height: 792.6667
-    m_Scale: {x: 1.3629193, y: 1.3629193}
+    m_Scale: {x: 1.3486567, y: 1.3486567}
     m_Translation: {x: 747.6666, y: 396.33334}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -105,10 +105,10 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -548.57733
-      y: -290.79736
-      width: 1097.1547
-      height: 581.5947
+      x: -554.3788
+      y: -293.87268
+      width: 1108.7576
+      height: 587.74536
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 2243, y: 1220.5}
@@ -312,8 +312,8 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
-      snapOffsetDelta: {x: -98.666626, y: -26}
+      snapOffset: {x: -101, y: -26}
+      snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       id: Tool Settings
       index: 0
@@ -559,9 +559,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -9.42745, y: 8.590928, z: -0.10781212}
+    m_Target: {x: 2.9630456, y: 3.7252223, z: -0.2095406}
     speed: 2
-    m_Value: {x: -9.42745, y: 8.590928, z: -0.10781212}
+    m_Value: {x: 2.9630456, y: 3.7252223, z: -0.2095406}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -612,9 +612,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2.5820408
+    m_Target: 15.202659
     speed: 2
-    m_Value: 2.5820408
+    m_Value: 15.202659
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -682,7 +682,7 @@ MonoBehaviour:
   m_MinSize: {x: 600, y: 300}
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
-    m_Text: (*) Player (Input Actions)
+    m_Text: Player (Input Actions)
     m_Image: {fileID: 0}
     m_Tooltip: 
   m_Pos:
@@ -719,9 +719,9 @@ MonoBehaviour:
     m_SearchString: 
   m_ActionsTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ed7bbfa4
-    m_LastClickedID: -1530954771
-    m_ExpandedIDs: f900a0aedb7fd2f911a0c009b714e30e49060334dabee95a73920f69
+    m_SelectedIDs: 21c5b9b5
+    m_LastClickedID: -1246116575
+    m_ExpandedIDs: f900a0aedb7fd2f97a160d0311a0c009b714e30e49060334dabee95a73920f69
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -746,7 +746,7 @@ MonoBehaviour:
         selectedIndex: 2
         scroll: {x: 0, y: 0}
       - itemId: 1275948795
-        selectedIndex: 3
+        selectedIndex: 1
         scroll: {x: 0, y: 63.5}
       - itemId: -1435435360
         selectedIndex: -1
@@ -778,6 +778,9 @@ MonoBehaviour:
       - itemId: -1184013745
         selectedIndex: -1
         scroll: {x: 0, y: 0}
+      - itemId: 403810634
+        selectedIndex: 0
+        scroll: {x: 0, y: 0}
     m_ManualPathEditMode: 0
   m_ActionAssetManager:
     m_AssetObjectForEditing: {fileID: 0}
@@ -808,6 +811,10 @@ MonoBehaviour:
       \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
       },\n                {\n                    \"name\": \"WallJump\",\n                   
       \"type\": \"Button\",\n                    \"id\": \"2c882cfb-d6c3-4afe-8057-e7526213786e\",\n                   
+      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
+      },\n                {\n                    \"name\": \"DashUp\",\n                   
+      \"type\": \"Button\",\n                    \"id\": \"297c1d50-2308-47d3-9246-4c50b06eee3d\",\n                   
       \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
       \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
       }\n            ],\n            \"bindings\": [\n                {\n                   
@@ -948,6 +955,17 @@ MonoBehaviour:
       \"path\": \"<SwitchProControllerHID>/buttonSouth\",\n                    \"interactions\":
       \"\",\n                    \"processors\": \"\",\n                    \"groups\":
       \"Gamepad\",\n                    \"action\": \"WallJump\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"cb980135-c844-4604-bbd4-d8d6ebd8fdee\",\n                    \"path\":
+      \"<Keyboard>/x\",\n                    \"interactions\": \"\",\n                   
+      \"processors\": \"\",\n                    \"groups\": \"Keyboard&Mouse\",\n                   
+      \"action\": \"DashUp\",\n                    \"isComposite\": false,\n                   
+      \"isPartOfComposite\": false\n                },\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"ff5729c8-7139-499c-b1ed-bef0be31a6e2\",\n                   
+      \"path\": \"<SwitchProControllerHID>/buttonSouth\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"Gamepad\",\n                    \"action\": \"DashUp\",\n                   
       \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
       }\n            ]\n        },\n        {\n            \"name\": \"UI\",\n           
       \"id\": \"ee96a077-a317-45c3-b32f-06dff2720254\",\n            \"actions\":
@@ -1220,9 +1238,9 @@ MonoBehaviour:
       \"bindingGroup\": \"XR\",\n            \"devices\": [\n                {\n                   
       \"devicePath\": \"<XRController>\",\n                    \"isOptional\": false,\n                   
       \"isOR\": false\n                }\n            ]\n        }\n    ]\n}"
-    m_IsDirty: 1
+    m_IsDirty: 0
   m_Toolbar:
-    m_IsDirty: 1
+    m_IsDirty: 0
     m_SelectedControlSchemeIndex: -1
     m_SelectedDeviceRequirementIndex: -1
     m_ControlSchemes:
@@ -1290,7 +1308,7 @@ MonoBehaviour:
   - {fileID: 14}
   - {fileID: 15}
   m_Selected: 0
-  m_LastSelected: 3
+  m_LastSelected: 1
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1332,22 +1350,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scripts/Gameplay
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scripts/Gameplay
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\GRA - NIE KASOWAC\_PurpleGuy_Github\Monstrum
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b8600000
-    m_LastClickedID: 24760
-    m_ExpandedIDs: 00000000b8600000ba60000000ca9a3b
+    m_SelectedIDs: 18610000
+    m_LastClickedID: 24856
+    m_ExpandedIDs: 00000000066100000861000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1375,7 +1393,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b8600000ba60000000ca9a3b
+    m_ExpandedIDs: 000000000661000008610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1403,7 +1421,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c623000008610000286100009e01000032610000
+    m_ExpandedInstanceIDs: c6230000086100002861000032610000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1452,9 +1470,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 848
-    width: 1955
-    height: 511.00006
+    y: 907.3334
+    width: 1981.6666
+    height: 451.6667
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1481,7 +1499,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 907.3334
-    width: 1981
+    width: 1981.6666
     height: 451.6667
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -1494,8 +1512,8 @@ MonoBehaviour:
   m_SearchText: 
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 7f0eae07
-    m_LastClickedID: 128847487
+    m_SelectedIDs: eb925b96
+    m_LastClickedID: -1772383509
     m_ExpandedIDs: a01a5fa600000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1544,7 +1562,7 @@ MonoBehaviour:
     m_SaveData: []
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 24670
+  m_LastSelectedObjectID: -4136
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
