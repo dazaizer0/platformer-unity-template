@@ -22,7 +22,6 @@ public class PlayerMovement : MonoBehaviour
 
     // jump
     private bool isJump;
-
     private float jumpPower = 25f;
     public float jumpStartTime;
     private float jumpTime;
@@ -32,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
     public bool Dashing;
     private bool canDash = true;
     private bool dashing;
-
     private float dashingPower = 50f;
     private float dashTime = 0.2f;
     private float dashCooldown = 2f;
@@ -40,14 +38,12 @@ public class PlayerMovement : MonoBehaviour
     // dash up
     private bool dashingUp = false;
     private bool canDashUp = false;
-
     private int toDashUp = 1;
     private float dashUpPower = 800;
 
     // wall movement
     private bool wallSlide;
     private bool wallJump;
-
     private float wallSlideSpeed = 0.3f;
     private float wallJumpDirection;
     private float wallJumpTime = 0.2f;
@@ -106,8 +102,7 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wall);
     }
 
-
-    public void Jump(InputAction.CallbackContext context)
+    public void Jump(InputAction.CallbackContext context) // lookat
     {
 
         if(!dashingUp)
@@ -194,6 +189,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Dash(InputAction.CallbackContext context)
     {
+        
         if (!grounded())
         {
 
