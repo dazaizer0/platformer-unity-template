@@ -233,6 +233,16 @@ public class PlayerMovement : MonoBehaviour
         canDash = true;
     }
 
+    public void Interact(InputAction.CallbackContext context)
+    {
+
+        if(context.performed)
+        {
+
+            PortalEnter.KeyDown = true;
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
 

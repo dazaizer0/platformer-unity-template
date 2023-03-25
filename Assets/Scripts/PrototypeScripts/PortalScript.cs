@@ -9,6 +9,7 @@ public class PortalScript : MonoBehaviour
 
     public bool portal_entered = false;
     public bool to_portal_two = true;
+    public bool to_portal_one = true;
     public bool one_way;
 
     [Header("transform")]
@@ -25,6 +26,8 @@ public class PortalScript : MonoBehaviour
     void Update()
     {
 
+        to_portal_two = true;
+        
         if(portal_entered && to_portal_two)
         {
 

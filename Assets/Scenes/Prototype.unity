@@ -676,7 +676,7 @@ GameObject:
   - component: {fileID: 192959331}
   m_Layer: 0
   m_Name: 2
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -778,7 +778,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.050066862, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -802,7 +802,7 @@ GameObject:
   - component: {fileID: 244617767}
   m_Layer: 0
   m_Name: 1
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -864,7 +864,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.043137256, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1882,7 +1882,7 @@ GameObject:
   - component: {fileID: 900941834}
   m_Layer: 0
   m_Name: 1
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1984,7 +1984,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.04289031, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2008,7 +2008,7 @@ GameObject:
   - component: {fileID: 1195925306}
   m_Layer: 0
   m_Name: 2
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2070,7 +2070,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.050066862, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -2547,7 +2547,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal_entered: 0
   to_portal_two: 1
-  one_way: 1
+  to_portal_one: 1
+  one_way: 0
   portal_one: {fileID: 900941833}
   portal_two: {fileID: 192959330}
 --- !u!1 &1343922652
@@ -2598,7 +2599,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal_entered: 0
   to_portal_two: 1
-  one_way: 1
+  to_portal_one: 1
+  one_way: 0
   portal_one: {fileID: 244617765}
   portal_two: {fileID: 1195925303}
 --- !u!1 &1591165427
@@ -3495,6 +3497,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.028848, y: 1.0245111}
   m_EdgeRadius: 0
+--- !u!114 &2051711258 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 604123192426730387, guid: 1bfc2ec512cf5f64e9a360179b69e97a, type: 3}
+  m_PrefabInstance: {fileID: 604123192588384180}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7f2448a0ab5e5c4785e8d8a22814f5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2098020850
 GameObject:
   m_ObjectHideFlags: 0
@@ -3536,6 +3549,46 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 604123192426730396, guid: 1bfc2ec512cf5f64e9a360179b69e97a, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 604123192426730396, guid: 1bfc2ec512cf5f64e9a360179b69e97a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionId
+      value: 51db97d1-33f7-4ef1-9a88-6c997819fe55
+      objectReference: {fileID: 0}
+    - target: {fileID: 604123192426730396, guid: 1bfc2ec512cf5f64e9a360179b69e97a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionName
+      value: Player/Interact[/Keyboard/c]
+      objectReference: {fileID: 0}
+    - target: {fileID: 604123192426730396, guid: 1bfc2ec512cf5f64e9a360179b69e97a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 604123192426730396, guid: 1bfc2ec512cf5f64e9a360179b69e97a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 604123192426730396, guid: 1bfc2ec512cf5f64e9a360179b69e97a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 2051711258}
+    - target: {fileID: 604123192426730396, guid: 1bfc2ec512cf5f64e9a360179b69e97a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 604123192426730396, guid: 1bfc2ec512cf5f64e9a360179b69e97a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Interact
+      objectReference: {fileID: 0}
+    - target: {fileID: 604123192426730396, guid: 1bfc2ec512cf5f64e9a360179b69e97a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 604123192426730396, guid: 1bfc2ec512cf5f64e9a360179b69e97a, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 604123192677288266, guid: 1bfc2ec512cf5f64e9a360179b69e97a, type: 3}
       propertyPath: m_Name
       value: Player

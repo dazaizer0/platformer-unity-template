@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2428339771574000796}
   m_Layer: 0
   m_Name: 1
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 2428339772792754561}
   m_Layer: 0
   m_Name: 2
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -300,6 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   portal_entered: 0
   to_portal_two: 1
+  to_portal_one: 1
   one_way: 1
   portal_one: {fileID: 2428339771574000798}
   portal_two: {fileID: 2428339772792754572}
