@@ -18,6 +18,14 @@ public class PlayerMovement : MonoBehaviour
     private float horizontal;
 
     [Header("Movement")]
+    public MovementState state;
+
+    public enum MovementState{
+        ground,
+        wall,
+        jump,
+    }
+    
     private float speed = 9f;
 
     // jump
@@ -68,6 +76,16 @@ public class PlayerMovement : MonoBehaviour
 
         if(dashing || dashingUp){Dashing = true;}
         else{Dashing = false;}
+
+        if(grounded())
+        {
+            state = MovementState.ground;
+        }else{state = MovementState.jump;}
+        if(walled())
+        {
+            
+            state = MovementState.wall;
+        }
     }
 
     void FixedUpdate()
