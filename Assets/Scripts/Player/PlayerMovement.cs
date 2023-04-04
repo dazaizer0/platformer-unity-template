@@ -62,6 +62,8 @@ public class PlayerMovement : MonoBehaviour
     // flip
     private bool right = true;
 
+    void Stack() {}
+
     void Update()
     {
 
