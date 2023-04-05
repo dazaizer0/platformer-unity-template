@@ -7,6 +7,7 @@ using TMPro;
 public class PlayerStats : MonoBehaviour
 {
 
+    public Transform spawn_point;
     public TextMeshProUGUI ScoreText;
     public float score;
 
@@ -32,5 +33,16 @@ public class PlayerStats : MonoBehaviour
     {
 
         ScoreText.text = score.ToString("F1");
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        
+        if(other.tag == "damage_object")
+        {
+
+            score -= 50f;
+            transform.position = spawn_point.position;
+        }
     }
 }
