@@ -20,14 +20,19 @@ public class PlayerCamera : MonoBehaviour
     public float yMin;
     public float yMax;
 
+    public bool MaxAndMinSet = false;
+
     void Update()
     {
-        
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, xMin, xMax), 
-            Mathf.Clamp(transform.position.y, yMin, yMax), 
-            transform.position.z);
+        if(MaxAndMinSet)
+        {
 
+            transform.position = new Vector3(Mathf.Clamp(transform.position.x, xMin, xMax), 
+                Mathf.Clamp(transform.position.y, yMin, yMax), 
+                transform.position.z);
+        }
     }
+    
     private void LateUpdate()
     {
         

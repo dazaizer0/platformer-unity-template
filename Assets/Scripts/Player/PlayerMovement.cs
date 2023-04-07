@@ -42,6 +42,7 @@ public class PlayerMovement : MonoBehaviour
     private float dashingPower = 50f;
     private float dashTime = 0.2f;
     private float dashCooldown = 2f;
+    public static float dashForwardCooldown;
 
     // dash up
     private bool dashingUp = false;
@@ -88,6 +89,9 @@ public class PlayerMovement : MonoBehaviour
             
             state = MovementState.wall;
         }
+
+        dashForwardCooldown += 1 * Time.deltaTime;
+        if(dashForwardCooldown >= 1){dashForwardCooldown = 1;} 
     }
 
     void FixedUpdate()
@@ -210,9 +214,10 @@ public class PlayerMovement : MonoBehaviour
     public void Dash(InputAction.CallbackContext context)
     {
         
-        if (!grounded())
+        if (!grounded() && dashForwardCooldown == 1)
         {
 
+            dashForwardCooldown = 0;
             StartCoroutine(Dash());
         }
     }

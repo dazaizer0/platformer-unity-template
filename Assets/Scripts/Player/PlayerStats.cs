@@ -9,8 +9,12 @@ public class PlayerStats : MonoBehaviour
 {
 
     public Transform spawn_point;
+
     public TextMeshProUGUI ScoreText;
     public float score;
+
+    public TextMeshProUGUI DashCooldownText;
+
     private string active_scene;
 
 
@@ -26,6 +30,7 @@ public class PlayerStats : MonoBehaviour
         
         score -= 1 * Time.deltaTime;
         if(score <= 0) {SceneManager.LoadScene(active_scene);}
+        IntToTxt(DashCooldownText, PlayerMovement.dashForwardCooldown);
     }
 
     void FixedUpdate()
