@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask ground;
     [SerializeField] private LayerMask wall;
     [SerializeField] private TrailRenderer trail;
+    public Animator animator;
+    public SpriteRenderer spriteRenderer;
 
     // horizontal
     private float horizontal;
@@ -20,7 +22,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")]
     public MovementState state;
 
-    public enum MovementState{
+    public enum MovementState
+    {
+
         ground,
         wall,
         jump,
@@ -63,7 +67,10 @@ public class PlayerMovement : MonoBehaviour
     // flip
     private bool right = true;
 
-    void Stack() {}
+    void Start()
+    {
+
+    }
 
     void Update()
     {
@@ -138,12 +145,14 @@ public class PlayerMovement : MonoBehaviour
             {
 
                 rb.velocity = new Vector2(rb.velocity.x, jumpPower);
+                animator.SetTrigger("jump");
             }
 
             if (context.canceled && rb.velocity.y > 0f)
             {
 
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
+                animator.SetTrigger("jump");
             }
         }
     }
@@ -209,6 +218,18 @@ public class PlayerMovement : MonoBehaviour
     {
 
         horizontal = context.ReadValue<Vector2>().x;
+
+         if (context.performed)
+         {
+
+            horizontal = context.ReadValue<Vector2>().x;
+            animator.SetBool("isRunning", true);
+         }
+        else
+        {
+
+            animator.SetBool("isRunning", false);
+        }
     }
 
     public void Dash(InputAction.CallbackContext context)
@@ -229,6 +250,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             rb.AddForce(transform.up * dashUpPower * 100);
+            animator.SetTrigger("jump");
             dashingUp = true;
         }
     }
@@ -241,6 +263,8 @@ public class PlayerMovement : MonoBehaviour
         dashing = true;
 
         // dash
+        spriteRenderer.color = Color.green;
+
         rb.gravityScale = 0f;
         speed = 15f;
 
@@ -248,6 +272,8 @@ public class PlayerMovement : MonoBehaviour
         trail.emitting = true;
 
         yield return new WaitForSeconds(dashTime);
+
+        spriteRenderer.color = Color.white;
 
         trail.emitting = false;
         rb.gravityScale = 2.8f;
