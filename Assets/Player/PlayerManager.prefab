@@ -733,7 +733,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2275373430784006863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.0122, y: -0.0156, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -888,7 +888,7 @@ MonoBehaviour:
   - {x: 0.20987852, y: -0.49866572, z: 0}
   m_ShapePathHash: 333128827
   m_Mesh: {fileID: 0}
-  m_InstanceId: 40146
+  m_InstanceId: 39062
 --- !u!1 &4832647756578824848
 GameObject:
   m_ObjectHideFlags: 0
