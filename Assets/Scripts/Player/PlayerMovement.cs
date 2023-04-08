@@ -239,6 +239,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             dashForwardCooldown = 0;
+            animator.SetTrigger("dash");
             StartCoroutine(Dash());
         }
     }
