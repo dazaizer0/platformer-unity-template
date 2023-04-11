@@ -147,8 +147,8 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, jumpPower);
                 animator.SetTrigger("jump");
 
-                if(right) { rb.AddForce(transform.right * dashUpPower * 50); }
-                else{ rb.AddForce(-transform.right * dashUpPower * 50);}
+                if(right) { rb.AddForce(transform.right * dashUpPower * 15); }
+                else{ rb.AddForce(-transform.right * dashUpPower * 15);}
             }
 
             if (context.canceled && rb.velocity.y > 0f)
@@ -157,8 +157,8 @@ public class PlayerMovement : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
                 animator.SetTrigger("jump");
 
-                if(right) { rb.AddForce(transform.right * dashUpPower * 50); }
-                else{ rb.AddForce(-transform.right * dashUpPower * 50);}
+                if(right) { rb.AddForce(transform.right * dashUpPower * 15); }
+                else{ rb.AddForce(-transform.right * dashUpPower * 15);}
             }
         }
     }
