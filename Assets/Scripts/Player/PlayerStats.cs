@@ -11,7 +11,7 @@ public class PlayerStats : MonoBehaviour
     public Transform spawn_point;
 
     public TextMeshProUGUI ScoreText;
-    public float score;
+    public static float score;
 
     public TextMeshProUGUI DashCooldownText;
 

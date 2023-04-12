@@ -309,5 +309,11 @@ public class PlayerMovement : MonoBehaviour
 
             Destroy(other.gameObject);
         }
+
+        if (other.tag == "ScoreTimeBoost")
+        {
+
+            PlayerStats.score += 15;
+        }
     }
 }
