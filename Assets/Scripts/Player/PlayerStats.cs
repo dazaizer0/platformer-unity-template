@@ -21,7 +21,7 @@ public class PlayerStats : MonoBehaviour
     void Start()
     {
         
-        score = 500f;
+        score = 180f;
         active_scene = SceneManager.GetActiveScene().name;
     }
 
